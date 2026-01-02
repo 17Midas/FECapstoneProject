@@ -4,7 +4,7 @@ import WeatherCard from './components/WeatherCard';
 
 function App() {
   const [weather, setWeather] = useState(null);
-  const API_KEY = 'PASTE_YOUR_API_KEY_HERE'; 
+  const API_KEY = 'b1781bac0c1af2067ddc881fe6bdb858'; 
 
   const fetchWeather = async (city) => {
     try {
