@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function SearchForm({ onSearch }) {
-  const [city, setCity] = useState('');
+export default function Search({ onSearch }) {
+  const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (city.trim()) {
-      onSearch(city);
-      setCity('');
-    }
+    if (input.trim()) onSearch(input);
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-form">
       <input 
         type="text" 
         placeholder="Enter city name..." 
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
+        value={input} 
+        onChange={(e) => setInput(e.target.value)} 
       />
       <button type="submit">Search</button>
     </form>
   );
 }
-
-export default SearchForm;
-
