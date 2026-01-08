@@ -1,26 +1,19 @@
-import React from 'react';
-
-function WeatherCard({ data }) {
+export default function WeatherCard({ data }) {
+  const { name, main, weather, wind } = data;
+  
   return (
-    <div className="weather-box">
-      <h2>{data.name}</h2>
-      <p style={{color: '#94a3b8'}}>{data.weather[0].description}</p>
-      
-      <div className="temp">{Math.round(data.main.temp)}°C</div>
-      
+    <div className="weather-card">
+      <h2>{name}</h2>
+      <img 
+        src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} 
+        alt={weather[0].description} 
+      />
+      <p className="temp">{Math.round(main.temp)}°C</p>
+      <p className="desc">{weather[0].description}</p>
       <div className="details">
-        <div className="stat">
-          <p className="stat-label">Humidity</p>
-          <p><strong>{data.main.humidity}%</strong></p>
-        </div>
-        <div className="stat">
-          <p className="stat-label">Wind</p>
-          <p><strong>{data.wind.speed} m/s</strong></p>
-        </div>
+        <span>Humidity: {main.humidity}%</span>
+        <span>Wind: {wind.speed} m/s</span>
       </div>
     </div>
   );
 }
-
-export default WeatherCard;
-
