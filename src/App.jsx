@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Search from './components/Search.jsx';
+import Search from './components/SearchForm.jsx';
 import WeatherCard from './components/WeatherCard.jsx';
 import './index.css';
 
