@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Search from './components/SearchForm.jsx';
+import React, { useState } from 'react';
+import SearchForm from './components/SearchForm.jsx';
 import WeatherCard from './components/WeatherCard.jsx';
 import './style.css';
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="app-container">
       <h1>Weather App</h1>
-      <Search onSearch={fetchWeather} />
+      <SearchForm onSearch={fetchWeather} />
       {error && <p className="error">{error}</p>}
       {weather && <WeatherCard data={weather} />}
     </div>
