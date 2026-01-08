@@ -1,3 +1,4 @@
+import React from 'react';
 export default function WeatherCard({ data }) {
   const { name, main, weather, wind } = data;
   
