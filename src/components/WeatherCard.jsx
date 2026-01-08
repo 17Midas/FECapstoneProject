@@ -12,8 +12,14 @@ export default function WeatherCard({ data }) {
       <p className="temp">{Math.round(main.temp)}°C</p>
       <p className="desc">{weather[0].description}</p>
       <div className="details">
-        <span>Humidity: {main.humidity}%</span>
-        <span>Wind: {wind.speed} m/s</span>
+        <div>
+          <p>Humidity</p>
+          <span>{main.humidity}%</span>
+        </div>
+        <div>
+          <p>Wind Speed</p>
+          <span>{wind.speed} m/s</span>
+        </div>
       </div>
     </div>
   );
